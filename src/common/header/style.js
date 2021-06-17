@@ -21,8 +21,10 @@ export const Logo = styled.a.attrs({
 `;
 
 export const Nav = styled.div`
-  width: 860px;
+  width: 70%;
   margin: 0 auto;
+  padding-right: 70px;
+  box-sizing: border-box;
   height: 100%;
 `;
 
@@ -49,8 +51,39 @@ export const NavSearch = styled.input.attrs({
   height: 38px;
   padding: 0 20px;
   margin-top: 9px;
+  margin-left: 20px;
+  box-sizing: border-box;
   border: none;
   outline: none;
   border-radius: 19px;
-  background: green;
+  background: #eee;
+  font-size: 14px;
+  &::placeholder {
+    color: #999;
+  }
+`;
+
+export const Addition = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 56px;
+`;
+
+export const Button = styled.div`
+  float: right;
+  line-height: 38px;
+  border-radius: 19px;
+  margin-top: 9px;
+  margin-right: 20px;
+  padding: 0 20px;
+  border: 1px solid #ec6149;
+  font-size: 14px;
+  &.reg {
+    color: #ec6149;
+  }
+  &.write {
+    color: #fff;
+    background: #ec6149;
+  }
 `;
