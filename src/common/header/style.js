@@ -58,6 +58,23 @@ export const NavSearch = styled.input.attrs({
   border-radius: 19px;
   background: #eee;
   font-size: 14px;
+  &.focused {
+    width: 250px;
+  }
+  &.slide-enter {
+    width: 160px;
+  }
+  &.slide-enter-active {
+    width: 250px;
+    transition: width 0.2s ease-in;
+  }
+  &.slide-exit {
+    width: 250px;
+  }
+  &.slide-exit-active {
+    width: 160px;
+    transition: width 0.2s ease-in;
+  }
   &::placeholder {
     color: #999;
   }
