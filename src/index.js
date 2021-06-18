@@ -6,7 +6,6 @@ import { GlobalStyle } from "./style";
 ReactDOM.render(
   <div>
     <App />
-
     <GlobalStyle />
   </div>,
   document.getElementById("root")

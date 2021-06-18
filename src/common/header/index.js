@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
+
+import { handleInputFocus, handleInputBlur } from "./actionCreator";
+
 import {
   HeaderWrapper,
   Logo,
@@ -45,15 +48,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      const action = {
-        type: "search_focus",
-      };
+      const action = handleInputFocus();
       dispatch(action);
     },
     handleInputBlur() {
-      const action = {
-        type: "search_blur",
-      };
+      const action = handleInputBlur();
       dispatch(action);
     },
   };
