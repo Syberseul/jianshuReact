@@ -21,7 +21,8 @@ import {
 
 class Header extends React.Component {
   getListArea = () => {
-    if (this.props.focused) {
+    const { focused, list } = this.props;
+    if (focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -29,7 +30,7 @@ class Header extends React.Component {
             <SearchInfoSwitch>Change</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {this.props.list.map((item) => {
+            {list.map((item) => {
               return <SearchInfoItem key={item}>{item}</SearchInfoItem>;
             })}
           </SearchInfoList>
@@ -41,6 +42,7 @@ class Header extends React.Component {
   };
 
   render() {
+    const { focused, handleInputFocus, handleInputBlur } = this.props;
     return (
       <HeaderWrapper>
         <Logo />
@@ -55,9 +57,9 @@ class Header extends React.Component {
             classNames="slide"
           >
             <NavSearch
-              className={this.props.focused ? "focused" : ""}
-              onFocus={this.props.handleInputFocus}
-              onBlur={this.props.handleInputBlur}
+              className={focused ? "focused" : ""}
+              onFocus={handleInputFocus}
+              onBlur={handleInputBlur}
             ></NavSearch>
           </CSSTransition>
           {this.getListArea()}
@@ -73,10 +75,8 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    // header comes from the overall reducer - which imported the combineReducers with header reducer's key is header.
     focused: state.getIn(["header", "focused"]),
     list: state.getIn(["header", "list"]),
-    // focused: state.get("header").get("focused"), - 等价
   };
 };
 
