@@ -10,9 +10,36 @@ import {
   Nav,
   NavItem,
   NavSearch,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoList,
+  SearchInfoItem,
   Addition,
   Button,
 } from "./style";
+
+const getListArea = (show) => {
+  if (show) {
+    return (
+      <SearchInfo>
+        <SearchInfoTitle>
+          Top search
+          <SearchInfoSwitch>Change</SearchInfoSwitch>
+        </SearchInfoTitle>
+        <SearchInfoList>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+        </SearchInfoList>
+      </SearchInfo>
+    );
+  } else {
+    return null;
+  }
+};
 
 const Header = (props) => {
   return (
@@ -30,6 +57,7 @@ const Header = (props) => {
             onBlur={props.handleInputBlur}
           ></NavSearch>
         </CSSTransition>
+        {getListArea(props.focused)}
       </Nav>
       <Addition>
         <Button className="write">Write</Button>
