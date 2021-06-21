@@ -42,7 +42,8 @@ const Header = (props) => {
 const mapStateToProps = (state) => {
   return {
     // header comes from the overall reducer - which imported the combineReducers with header reducer's key is header.
-    focused: state.header.get("focused"),
+    focused: state.getIn(["header", "focused"]),
+    // focused: state.get("header").get("focused"), - 等价
   };
 };
 
