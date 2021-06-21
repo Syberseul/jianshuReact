@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 
-import { handleInputFocus, handleInputBlur } from "./actionCreator";
+import { actionCreator } from "./store";
 
 import {
   HeaderWrapper,
@@ -41,19 +41,18 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.focused,
+    // header comes from the overall reducer - which imported the combineReducers with header reducer's key is header.
+    focused: state.header.get("focused"),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      const action = handleInputFocus();
-      dispatch(action);
+      dispatch(actionCreator.handleInputFocus());
     },
     handleInputBlur() {
-      const action = handleInputBlur();
-      dispatch(action);
+      dispatch(actionCreator.handleInputBlur());
     },
   };
 };
