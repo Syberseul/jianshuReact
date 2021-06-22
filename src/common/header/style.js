@@ -100,6 +100,10 @@ export const SearchInfoTitle = styled.div`
 export const SearchInfoSwitch = styled.div`
   float: right;
   font-size: 13px;
+  cursor: pointer;
+  p {
+    transition: all 0.2s ease-in;
+  }
 `;
 
 export const SearchInfoList = styled.div`

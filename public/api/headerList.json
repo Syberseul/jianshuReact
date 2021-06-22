@@ -16,6 +16,10 @@
     "Babel",
     "Node.js",
     "npm",
-    "TDD"
+    "TDD",
+    "CI/CD",
+    "AWS",
+    "TypeScript",
+    "axios"
   ]
 }

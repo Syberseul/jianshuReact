@@ -30,6 +30,8 @@ class Header extends React.Component {
       handleMouseEnter,
       handleMouseLeave,
       handleChangePage,
+      mouseEnterChange,
+      mouseLeaveChange,
     } = this.props;
     const jsList = list.toJS();
     const pageList = [];
@@ -54,8 +56,20 @@ class Header extends React.Component {
               onClick={() => {
                 handleChangePage(page, totalPage);
               }}
+              onMouseEnter={() => {
+                mouseEnterChange(this.change);
+              }}
+              onMouseLeave={() => {
+                mouseLeaveChange(this.change);
+              }}
             >
-              Change
+              <p
+                ref={(changeText) => {
+                  this.change = changeText;
+                }}
+              >
+                Change
+              </p>
             </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>{pageList}</SearchInfoList>
@@ -129,6 +143,14 @@ const mapDispatchToProps = (dispatch) => {
       } else {
         dispatch(actionCreator.handleChangePage(1));
       }
+    },
+    mouseEnterChange(changeText) {
+      changeText.style.transform = "scale(1.2)";
+      dispatch(actionCreator.mouseEnterChange());
+    },
+    mouseLeaveChange(changeText) {
+      changeText.style.transform = "scale(1)";
+      dispatch(actionCreator.mouseLeaveChange());
     },
   };
 };
