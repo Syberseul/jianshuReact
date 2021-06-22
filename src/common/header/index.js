@@ -114,15 +114,13 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    focused: state.getIn(["header", "focused"]),
-    list: state.getIn(["header", "list"]),
-    page: state.getIn(["header", "page"]),
-    totalPage: state.getIn(["header", "totalPage"]),
-    mouseIn: state.getIn(["header", "mouseIn"]),
-  };
-};
+const mapStateToProps = (state) => ({
+  focused: state.getIn(["header", "focused"]),
+  list: state.getIn(["header", "list"]),
+  page: state.getIn(["header", "page"]),
+  totalPage: state.getIn(["header", "totalPage"]),
+  mouseIn: state.getIn(["header", "mouseIn"]),
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
