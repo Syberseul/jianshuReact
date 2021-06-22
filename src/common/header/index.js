@@ -146,11 +146,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     mouseEnterChange(changeText) {
       changeText.style.transform = "scale(1.2)";
-      dispatch(actionCreator.mouseEnterChange());
     },
     mouseLeaveChange(changeText) {
       changeText.style.transform = "scale(1)";
-      dispatch(actionCreator.mouseLeaveChange());
     },
   };
 };

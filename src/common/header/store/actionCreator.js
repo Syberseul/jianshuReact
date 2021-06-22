@@ -42,11 +42,3 @@ export const handleChangePage = (page) => ({
   type: constants.CHANGE_PAGE,
   page,
 });
-
-export const mouseEnterChange = () => ({
-  type: constants.MOUSE_ENTER_CHANGE,
-});
-
-export const mouseLeaveChange = () => ({
-  type: constants.MOUSE_LEAVE_CHANGE,
-});
