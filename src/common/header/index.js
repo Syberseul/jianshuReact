@@ -21,19 +21,44 @@ import {
 
 class Header extends React.Component {
   getListArea = () => {
-    const { focused, list } = this.props;
-    if (focused) {
+    const {
+      focused,
+      list,
+      page,
+      totalPage,
+      mouseIn,
+      handleMouseEnter,
+      handleMouseLeave,
+      handleChangePage,
+    } = this.props;
+    const jsList = list.toJS();
+    const pageList = [];
+
+    if (jsList.length) {
+      for (let i = (page - 1) * 5; i < page * 5; i++) {
+        pageList.push(
+          <SearchInfoItem key={jsList[i]}>{jsList[i]}</SearchInfoItem>
+        );
+      }
+    }
+
+    if (focused || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <SearchInfoTitle>
             Top search
-            <SearchInfoSwitch>Change</SearchInfoSwitch>
+            <SearchInfoSwitch
+              onClick={() => {
+                handleChangePage(page, totalPage);
+              }}
+            >
+              Change
+            </SearchInfoSwitch>
           </SearchInfoTitle>
-          <SearchInfoList>
-            {list.map((item) => {
-              return <SearchInfoItem key={item}>{item}</SearchInfoItem>;
-            })}
-          </SearchInfoList>
+          <SearchInfoList>{pageList}</SearchInfoList>
         </SearchInfo>
       );
     } else {
@@ -77,6 +102,9 @@ const mapStateToProps = (state) => {
   return {
     focused: state.getIn(["header", "focused"]),
     list: state.getIn(["header", "list"]),
+    page: state.getIn(["header", "page"]),
+    totalPage: state.getIn(["header", "totalPage"]),
+    mouseIn: state.getIn(["header", "mouseIn"]),
   };
 };
 
@@ -88,6 +116,19 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleInputBlur() {
       dispatch(actionCreator.handleInputBlur());
+    },
+    handleMouseEnter() {
+      dispatch(actionCreator.handleMouseEnter());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreator.handleMouseLeave());
+    },
+    handleChangePage(page, totalPage) {
+      if (page < totalPage) {
+        dispatch(actionCreator.handleChangePage(page + 1));
+      } else {
+        dispatch(actionCreator.handleChangePage(1));
+      }
     },
   };
 };

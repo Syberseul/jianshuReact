@@ -10,6 +10,12 @@
     "Redux",
     "Middleware",
     "thunk",
-    "Redux-thunk"
+    "Redux-thunk",
+    "Redux-saga",
+    "immutable",
+    "Babel",
+    "Node.js",
+    "npm",
+    "TDD"
   ]
 }

@@ -5,6 +5,7 @@ import axios from "axios";
 const changeList = (data) => ({
   type: constants.CHANGE_LIST,
   data: fromJS(data),
+  totalPage: Math.ceil(data.length / 5),
 });
 
 export const handleInputFocus = () => ({
@@ -28,3 +29,16 @@ export const getList = () => {
       });
   };
 };
+
+export const handleMouseEnter = () => ({
+  type: constants.MOUSE_ENTER,
+});
+
+export const handleMouseLeave = () => ({
+  type: constants.MOUSE_LEAVE,
+});
+
+export const handleChangePage = (page) => ({
+  type: constants.CHANGE_PAGE,
+  page,
+});
