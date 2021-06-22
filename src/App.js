@@ -1,11 +1,24 @@
 import Header from "./common/header";
 import { Provider } from "react-redux";
+import { BrowserRouter, Route } from "react-router-dom";
 import store from "./store";
 
 function App() {
   return (
     <Provider store={store}>
-      <Header />
+      <div>
+        <Header />
+        <BrowserRouter>
+          <div>
+            <Route path="/" exact render={() => <div>Home</div>}></Route>
+            <Route
+              path="/detail"
+              exact
+              render={() => <div>Detail</div>}
+            ></Route>
+          </div>
+        </BrowserRouter>
+      </div>
     </Provider>
   );
 }
