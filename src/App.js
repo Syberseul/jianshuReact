@@ -1,6 +1,8 @@
 import Header from "./common/header";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Detail from "./pages/detail";
 import store from "./store";
 
 function App() {
@@ -10,12 +12,8 @@ function App() {
         <Header />
         <BrowserRouter>
           <div>
-            <Route path="/" exact render={() => <div>Home</div>}></Route>
-            <Route
-              path="/detail"
-              exact
-              render={() => <div>Detail</div>}
-            ></Route>
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/detail" exact component={Detail}></Route>
           </div>
         </BrowserRouter>
       </div>
