@@ -83,3 +83,16 @@ export const ListInfo = styled.div`
     color: #999;
   }
 `;
+
+export const List = styled.div`
+  cursor: pointer;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dcdcdc;
+  .recommend {
+    width: 220px;
+    height: 40px;
+    margin: auto;
+  }
+`;
