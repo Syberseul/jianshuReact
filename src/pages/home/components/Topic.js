@@ -10,7 +10,11 @@ class Topic extends React.Component {
         {list.map((item) => {
           return (
             <TopicItem key={item.get("id")}>
-              <img className="topicPic" src={item.get("imgURL")} />
+              <img
+                className="topicPic"
+                src={item.get("imgURL")}
+                alt={item.get("desc")}
+              />
               {item.get("title")}
             </TopicItem>
           );
