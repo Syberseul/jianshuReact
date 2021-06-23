@@ -108,6 +108,48 @@ const defaultState = fromJS({
         "https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png",
     },
   ],
+  writterList: [
+    {
+      id: 1,
+      name: "闫泽华",
+      imgURL:
+        "https://upload.jianshu.io/users/upload_avatars/52841/251f5481-67b6-4bf0-86f4-faac9768beb3.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      contribution: "写了255.6k字",
+      like: "4.7k喜欢",
+    },
+    {
+      id: 2,
+      name: "梅拾璎",
+      imgURL:
+        "https://upload.jianshu.io/users/upload_avatars/3136195/484e32c3504a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      contribution: "写了259k字",
+      like: "31.3k喜欢",
+    },
+    {
+      id: 3,
+      name: "茶点故事",
+      imgURL:
+        "https://upload.jianshu.io/users/upload_avatars/4790772/388e473c-fe2f-40e0-9301-e357ae8f1b41.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      contribution: "写了744.8k字",
+      like: "15.9k喜欢",
+    },
+    {
+      id: 4,
+      name: "木清琳",
+      imgURL:
+        "https://upload.jianshu.io/users/upload_avatars/2631077/dc99c361412c?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      contribution: "写了293.9k字 ",
+      like: "3.4k喜欢",
+    },
+    {
+      id: 5,
+      name: "阿特otter",
+      imgURL:
+        "https://upload.jianshu.io/users/upload_avatars/11740279/4ba082e0-7a30-4429-9d9b-8cea04af272f.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      contribution: "写了147.3k字",
+      like: "603喜欢",
+    },
+  ],
 });
 
 export default (state = defaultState, action) => {

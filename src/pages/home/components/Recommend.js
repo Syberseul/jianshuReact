@@ -8,7 +8,14 @@ class Recommend extends React.Component {
     return (
       <List>
         {list.map((item) => {
-          return <img className="recommend" src={item.get("imgURL")} />;
+          return (
+            <img
+              className="recommend"
+              src={item.get("imgURL")}
+              key={item.get("id")}
+              alt=""
+            />
+          );
         })}
       </List>
     );

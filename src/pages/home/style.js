@@ -96,3 +96,49 @@ export const List = styled.div`
     margin: auto;
   }
 `;
+
+export const WritterWrapper = styled.div`
+  display: block;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #969696;
+  }
+  .changeBtn {
+    cursor: pointer;
+  }
+`;
+
+export const SingleWritterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  width: 100%;
+  .contribution {
+    font-size: 12px;
+    color: #969696;
+  }
+`;
+
+export const SingleWritter = styled.div`
+  display: flex;
+  margin: 20px auto;
+  .writterImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+`;
+
+export const WritterDetail = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+  .subscribe {
+    color: #42c02e;
+    cursor: pointer;
+  }
+`;
