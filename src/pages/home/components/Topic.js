@@ -24,8 +24,4 @@ const mapState = (state) => ({
   list: state.getIn(["home", "topicList"]),
 });
 
-const mapDispath = (dispatch) => {
-  // ..
-};
-
 export default connect(mapState, null)(Topic);
