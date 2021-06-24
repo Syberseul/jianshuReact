@@ -1,6 +1,5 @@
 import axios from "axios";
 import { fromJS } from "immutable";
-import { constants } from ".";
 import * as types from "./actionTypes";
 
 const changeHomeData = (result) => ({
@@ -12,7 +11,7 @@ const changeHomeData = (result) => ({
 });
 
 const addHomeList = (list, nextPage) => ({
-  type: constants.ADD_ARTICLE_LIST,
+  type: types.ADD_ARTICLE_LIST,
   list: fromJS(list),
   nextPage,
 });
@@ -34,3 +33,8 @@ export const getMoreList = (page) => {
     });
   };
 };
+
+export const toggleTopShow = (show) => ({
+  type: types.TOGGLE_SCROLL_TOP,
+  show,
+});

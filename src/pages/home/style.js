@@ -49,11 +49,6 @@ export const TopicItem = styled.div`
   }
 `;
 
-export const ListContainer = styled.div`
-  overflow-y: auto;
-  height: 60vh;
-`;
-
 export const ListItem = styled.div`
   overflow: hidden;
   padding: 20px 0;
@@ -153,4 +148,15 @@ export const LoadMore = styled.div`
   border-radius: 20px;
   color: #fff;
   cursor: pointer;
+`;
+
+export const BackTop = styled.div`
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
 `;

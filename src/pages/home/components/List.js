@@ -1,5 +1,5 @@
 import React from "react";
-import { ListContainer, ListItem, ListInfo, LoadMore } from "../style";
+import { ListItem, ListInfo, LoadMore } from "../style";
 import { connect } from "react-redux";
 import { actionCreator } from "../store";
 
@@ -7,7 +7,7 @@ class List extends React.Component {
   render() {
     const { list, getMoreList, page } = this.props;
     return (
-      <ListContainer>
+      <div>
         {list.map((item, index) => {
           return (
             <ListItem key={index}>
@@ -20,7 +20,7 @@ class List extends React.Component {
           );
         })}
         <LoadMore onClick={() => getMoreList(page)}>More content</LoadMore>
-      </ListContainer>
+      </div>
     );
   }
 }
