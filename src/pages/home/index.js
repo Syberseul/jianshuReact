@@ -7,7 +7,7 @@ import { actionCreator } from "./store";
 import { connect } from "react-redux";
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
 
-class Home extends React.Component {
+class Home extends React.PureComponent {
   handleBackToTop() {
     window.scrollTo(0, 0);
   }

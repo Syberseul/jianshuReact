@@ -2,21 +2,24 @@ import React from "react";
 import { ListItem, ListInfo, LoadMore } from "../style";
 import { connect } from "react-redux";
 import { actionCreator } from "../store";
+import { Link } from "react-router-dom";
 
-class List extends React.Component {
+class List extends React.PureComponent {
   render() {
     const { list, getMoreList, page } = this.props;
     return (
       <div>
         {list.map((item, index) => {
           return (
-            <ListItem key={index}>
-              <img className="pic" src={item.get("imgURL")} alt="" />
-              <ListInfo>
-                <h3 className="title">{item.get("title")}</h3>
-                <p className="desc">{item.get("desc")}</p>
-              </ListInfo>
-            </ListItem>
+            <Link key={index} to="/detail">
+              <ListItem>
+                <img className="pic" src={item.get("imgURL")} alt="" />
+                <ListInfo>
+                  <h3 className="title">{item.get("title")}</h3>
+                  <p className="desc">{item.get("desc")}</p>
+                </ListInfo>
+              </ListItem>
+            </Link>
           );
         })}
         <LoadMore onClick={() => getMoreList(page)}>More content</LoadMore>

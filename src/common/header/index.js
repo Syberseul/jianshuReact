@@ -4,6 +4,8 @@ import { CSSTransition } from "react-transition-group";
 
 import { actionCreator } from "./store";
 
+import { Link } from "react-router-dom";
+
 import {
   HeaderWrapper,
   Logo,
@@ -84,7 +86,9 @@ class Header extends React.Component {
     const { focused, handleInputFocus, handleInputBlur, list } = this.props;
     return (
       <HeaderWrapper>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <Nav>
           <NavItem className="left active">Home</NavItem>
           <NavItem className="left">Download App</NavItem>
