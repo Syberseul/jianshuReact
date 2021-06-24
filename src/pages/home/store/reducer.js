@@ -1,5 +1,6 @@
 // import * as constants from "./actionTypes";
 import { fromJS } from "immutable";
+import * as types from "./actionTypes";
 
 const defaultState = fromJS({
   topicList: [],
@@ -10,7 +11,7 @@ const defaultState = fromJS({
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case "change_home_data":
+    case types.CHANGE_HOME_DATA:
       return state.merge({
         topicList: fromJS(action.topicList),
         articleList: fromJS(action.articleList),
