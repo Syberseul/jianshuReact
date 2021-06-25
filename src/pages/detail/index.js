@@ -18,7 +18,7 @@ class Detail extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getDetail();
+    this.props.getDetail(this.props.match.params.id);
   }
 }
 
@@ -29,8 +29,8 @@ const mapState = (state) => ({
 });
 
 const mapDispatch = (dispatch) => ({
-  getDetail() {
-    dispatch(actionCreator.getDetail());
+  getDetail(id) {
+    dispatch(actionCreator.getDetail(id));
   },
 });
 

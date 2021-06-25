@@ -8,11 +8,14 @@ const changeDetail = (title, desc, imgURL) => ({
   imgURL,
 });
 
-export const getDetail = () => {
+export const getDetail = (id) => {
   return (dispatch) => {
-    axios.get("/api/detail.json").then((res) => {
-      const result = res.data.data;
-      dispatch(changeDetail(result.title, result.desc, result.imgURL));
+    axios.get("/api/detail.json?id=" + id).then((res) => {
+      res.data.data.forEach((obj) => {
+        if (obj.id === id) {
+          dispatch(changeDetail(obj.title, obj.desc, obj.imgURL));
+        }
+      });
     });
   };
 };
