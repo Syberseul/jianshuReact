@@ -120,7 +120,9 @@ class Header extends React.Component {
           {this.getListArea()}
         </Nav>
         <Addition>
-          <Button className="write">Write</Button>
+          <Link to="/write">
+            <Button className="write">Write</Button>
+          </Link>
           <Button className="reg">Sign Up</Button>
         </Addition>
       </HeaderWrapper>

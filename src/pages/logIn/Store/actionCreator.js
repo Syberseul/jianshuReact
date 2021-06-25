@@ -8,14 +8,19 @@ const changeLogin = () => ({
 
 export const login = (acc, pwd) => {
   return (dispatch) => {
-    axios.get("/api/login.json?acc=" + acc + "&pwd=" + pwd).then((res) => {
-      const result = res.data.data;
-      if (result) {
-        dispatch(changeLogin());
-      } else {
-        alert("log in failed");
-      }
-    });
+    axios
+      .get("/api/login.json?acc=" + acc + "&pwd=" + pwd)
+      .then((res) => {
+        const result = res.data.data;
+        if (result) {
+          dispatch(changeLogin());
+        } else {
+          alert("log in failed");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 };
 
