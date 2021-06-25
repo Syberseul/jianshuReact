@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 
 import { actionCreator } from "./store";
+import { actionCreator as loginActionCreator } from "../../pages/logIn/Store";
 
 import { Link } from "react-router-dom";
 
@@ -83,7 +84,8 @@ class Header extends React.Component {
   };
 
   render() {
-    const { focused, handleInputFocus, handleInputBlur, list } = this.props;
+    const { focused, handleInputFocus, handleInputBlur, list, login, logout } =
+      this.props;
     return (
       <HeaderWrapper>
         <Link to="/">
@@ -92,7 +94,15 @@ class Header extends React.Component {
         <Nav>
           <NavItem className="left active">Home</NavItem>
           <NavItem className="left">Download App</NavItem>
-          <NavItem className="right">Log In</NavItem>
+          {login ? (
+            <NavItem className="right" onClick={logout}>
+              Log out
+            </NavItem>
+          ) : (
+            <Link to="/login">
+              <NavItem className="right">Log In</NavItem>
+            </Link>
+          )}
           <NavItem className="right">Aa</NavItem>
           <CSSTransition
             in={this.props.focused}
@@ -124,6 +134,7 @@ const mapStateToProps = (state) => ({
   page: state.getIn(["header", "page"]),
   totalPage: state.getIn(["header", "totalPage"]),
   mouseIn: state.getIn(["header", "mouseIn"]),
+  login: state.getIn(["login", "login"]),
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -155,6 +166,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     mouseLeaveChange(changeText) {
       changeText.style.transform = "scale(1)";
+    },
+    logout() {
+      dispatch(loginActionCreator.logout());
     },
   };
 };
