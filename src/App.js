@@ -2,9 +2,9 @@ import Header from "./common/header";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./pages/home";
-import Detail from "./pages/detail";
-import Login from "./pages/logIn";
-import Write from "./pages/Write";
+import Detail from "./pages/detail/loadable";
+import Login from "./pages/logIn/loadable";
+import Write from "./pages/Write/loadable";
 import store from "./store";
 
 function App() {
