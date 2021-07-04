@@ -15,6 +15,6 @@
   ### Setup:
   - in your vsCode terminal: `git clone https://github.com/Syberseul/jianshuReact.git`
   - install NPM package: `npm install`
-  - install request packages: 
-    - `npm install --save redux react-redux redux-thunk react-transition-group react-router react-loadable axios immutable immutable-redux` or
-    - `yarn add redux react-redux redux-thunk react-transition-group react-router react-loadable axios immutable immutable-redux `
+  - install request dependencies: 
+    - `npm install` or
+    - `yarn add `
