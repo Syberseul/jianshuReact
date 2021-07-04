@@ -18,3 +18,8 @@
   - install required dependencies: 
     - `npm install` or
     - `yarn add `
+
+- Demo:
+
+https://user-images.githubusercontent.com/32564367/124377962-38519880-dcf2-11eb-81cc-d853adc55ea0.MP4
+
